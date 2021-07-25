@@ -95,3 +95,55 @@ function printPrimes(num) {
   console.log(prime_num1);
 }
 printPrimes(97);
+
+6)
+const randomMove = () => {
+  const randomNumber = (Math.floor(Math.random() * 3))
+  if (randomNumber === 0){
+    return 'Rock';
+  }
+  else if (randomNumber === 1){
+    return 'Paper';
+  }
+  else if (randomNumber === 2){
+  return 'Scissors';
+  }
+    }
+console.log(randomMove());
+
+let computersMove = randomMove();
+// console.log(computersMove);
+let usersMove = randomMove();
+// console.log(usersMove);
+
+const rockPaperScissors = (computersMove,usersMove) => {
+  if (usersMove === computersMove){
+    return 'The game is a tie!';
+  }
+  else if (usersMove === 'Rock'){
+    if (computersMove === 'Paper'){
+      return 'The computer wins!';
+    }
+    else {
+      return 'You won!';
+    }
+  }
+  else if (usersMove === 'Paper'){
+    if (computersMove === 'Scissor'){
+      return 'The computer wins!';
+    }
+    else {
+      return 'You won!';
+    }
+  }
+  else if (usersMove === 'Scissor') {
+    if (computersMove === 'Rock') {
+      return 'The computer wins!';
+    }
+    else {
+      return 'You won!';
+    }
+  }
+}
+console.log('cmp:'+ computersMove + ' usr:' + usersMove);
+console.log(rockPaperScissors(computersMove, usersMove));
